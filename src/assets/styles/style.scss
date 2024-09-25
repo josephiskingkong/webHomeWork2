@@ -10,6 +10,8 @@ $accent-active-color: #FF8303;
 $accent-color: #A35709;
 $light-color: #F0E3CA;
 $light-transparent-color: #F0E3CAA3;
+$dark-background: #000000d6;
+$share-button-background: #23221F;
 
 $input-transition: 0.3s ease-out;
 
@@ -182,4 +184,53 @@ body {
         height: 3px;
         background-color: $accent-active-color;
     }
+}
+
+.share-screen {
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $dark-background;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s cubic-bezier(0.22, 0.6, 0.66, 0.95);
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    #share-menu {
+        height: 76px;
+        width: 90%;
+        background: $background-color;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+
+        .share-buttons {
+            padding: 14px 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+
+            .share-button {
+                width: 48px;
+                height: 48px;
+                border: none;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: $share-button-background;
+            }
+        }
+    }
+}
+
+.active-screen {
+    visibility: visible;
+    opacity: 1;
+    transition: 0.3s cubic-bezier(0.22, 0.6, 0.66, 0.95);
 }

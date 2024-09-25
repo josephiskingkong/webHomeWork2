@@ -1,4 +1,7 @@
 import { fetchTasks } from "../api/api.js";
+import { closeShareScreen, shareScreen } from "./shareScreen.js";
+
+export let currentTask = null;
 
 function addTaskToDOM(task) {
     const tasksContainer = document.querySelector('.tasks');
@@ -21,6 +24,17 @@ function addTaskToDOM(task) {
             ${createTaskButton('info', '', 'i')}
         </div>
     `;
+
+    const shareButton = taskElement.querySelector('#share');
+    shareButton.addEventListener('click', (event) => {
+        event.stopPropagation(); 
+        shareScreen.classList.add('active-screen');
+        currentTask = {
+            title: taskElement.querySelector('.task-title').textContent,
+            description: taskElement.querySelector('.task-description').textContent
+        };
+        document.addEventListener('click', closeShareScreen, { once: true });
+    });
 
     tasksContainer.appendChild(taskElement);
 }

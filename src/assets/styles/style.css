@@ -158,4 +158,50 @@ body {
   width: 64px;
   height: 3px;
   background-color: #FF8303;
+}
+
+.share-screen {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8392156863);
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0.22, 0.6, 0.66, 0.95);
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.share-screen #share-menu {
+  height: 76px;
+  width: 90%;
+  background: #1B1A17;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.share-screen #share-menu .share-buttons {
+  padding: 14px 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.share-screen #share-menu .share-buttons .share-button {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #23221F;
+}
+
+.active-screen {
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s cubic-bezier(0.22, 0.6, 0.66, 0.95);
 }/*# sourceMappingURL=style.css.map */
