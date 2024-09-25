@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --background-color: #1B1A17;
+    --main-color: #1F1E1B;
+    --accent-active-color: #FF8303;
+    --accent-color: #A35709;
+    --light-color: #F0E3CA;
+}
+
+body {
+    background: var(--background-color);
+}
