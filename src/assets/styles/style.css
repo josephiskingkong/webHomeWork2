@@ -1,16 +1,51 @@
 * {
-    padding: 0;
-    margin: 0;
-}
-
-:root {
-    --background-color: #1B1A17;
-    --main-color: #1F1E1B;
-    --accent-active-color: #FF8303;
-    --accent-color: #A35709;
-    --light-color: #F0E3CA;
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto";
 }
 
 body {
-    background: var(--background-color);
+  background: #1B1A17;
 }
+
+.add-menu {
+  padding: 22px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.add-menu .menu-inputs {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  flex: 1;
+  gap: 6px;
+}
+.add-menu .menu-inputs * {
+  height: 32px;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 7px 14px;
+  background-color: #242320;
+  border: 1px solid #FF8303;
+  border-radius: 4px;
+  outline: none;
+  color: #F0E3CA;
+}
+.add-menu .menu-inputs #description-input {
+  overflow: hidden;
+  transition: 0.3s ease-out;
+}
+.add-menu .menu-inputs #description-input:focus {
+  height: 128px;
+  transition: 0.3s ease-out;
+}
+.add-menu #menu-button {
+  width: 70px;
+  height: 70px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid #FF8303;
+}/*# sourceMappingURL=style.css.map */
