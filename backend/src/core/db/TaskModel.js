@@ -1,15 +1,16 @@
-const { Sequelize } = require('sequelize')
-require('dotenv').config();
+const { db } = require('./db')
+const { DataTypes } = require('sequelize')
 
-const db = new Sequelize(
-    'shop',
-    process.env.dbLogin,
-    process.env.dbPass,
-    {
-        host: process.env.dbHost,
-        port: process.env.dbPost,
-        dialect: 'postgres'
+const TaskModel = db.define('tasks', {
+    id: {
+        type: DataTypes.INTEGER, primaryKey: true, unique: true, autoIncrement: true
+    },
+    title: {
+        type: DataTypes.STRING
+    },
+    description: {
+        type: DataTypes.STRING
     }
-)
+})
 
-module.exports = { db }
+module.exports = { TaskModel }

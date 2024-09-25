@@ -1,3 +1,4 @@
+const { TaskModel } = require("./db/TaskModel");
 const { Task } = require("./Task");
 
 class TaskManager {
@@ -16,7 +17,14 @@ class TaskManager {
 
     }
 
-    getTasksList() {
+    async getTasksList() {
+        const tasks = await TaskModel.findAll();
+        if (tasks.length === 0) {
+            return [];
+        }
 
+        return tasks;
     }
 }
+
+module.exports = { TaskManager };

@@ -2,7 +2,7 @@ const { Sequelize } = require('sequelize')
 require('dotenv').config();
 
 const db = new Sequelize(
-    'todo',
+    'postgres',
     process.env.dbLogin,
     process.env.dbPass,
     {

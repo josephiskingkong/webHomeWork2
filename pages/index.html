@@ -25,12 +25,20 @@
             </button>
         </div>
 
-        <div class="tasks">
-            <div class="task">
-                
-            </div>
+        <div class="no-tasks-warning hidden" id="warning">
+            <div class="warning-separator"></div>
+            <span>No tasks</span>
+            <div class="warning-separator"></div>
+        </div>
+
+        <div class="tasks" id="tasksContainer">
+            
         </div>
     </div>
 </body>
+
+<script type="module" src="../src/scripts/api/api.js"></script>
+<script type="module" src="../src/scripts/interface/manageButtons.js"></script>
+<script type="module" src="../src/scripts/interface/loadTasks.js"></script>
 
 </html>

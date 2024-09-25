@@ -17,11 +17,16 @@ body {
     background: $background-color;
 }
 
+.hidden {
+    display: none !important;
+}
+
 .add-menu {
     padding: 22px;
     display: flex;
     flex-direction: row;
     gap: 8px;
+    padding-bottom: 32px;
 
     .menu-inputs {
         display: flex;
@@ -46,6 +51,7 @@ body {
 
         #description-input {
             overflow: hidden;
+            resize: none;
             transition: $input-transition;
         }
 
@@ -61,5 +67,119 @@ body {
         background-color: transparent;
         border-radius: 8px;
         border: 2px solid $accent-active-color;
+        cursor: pointer;
+    }
+}
+
+.tasks {
+    padding: 0px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.task {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    .task-wrapper {
+        background-color: $main-color;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 16px;
+        border: 2px solid $accent-color;
+        border-radius: 8px;
+        align-items: center;
+        z-index: 15;
+        cursor: pointer;
+        color: $light-color;
+
+        .task-texts {
+            display: flex;
+            flex-direction: column;
+            color: $light-color;
+
+            .task-title {
+                font-size: 22px;
+                font-weight: 500;
+            }
+        }
+
+        .delete-task-button {
+            width: 32px;
+            height: 32px;
+            border: 2px solid $accent-color;
+            border-radius: 5px;
+            background-color: $background-color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+
+            img {
+                width: 11px;
+                height: 11px;
+                transform: rotate(45deg);
+            }
+        }
+    }
+
+    .task-buttons {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        margin-top: 0;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.3s ease, max-height 0.3s ease, margin-top 0.3s ease;
+        justify-content: flex-end;
+
+        .task-button {
+            cursor: pointer;
+            color: $light-color;
+            font-size: 16px;
+            font-weight: 700;
+            width: 36px;
+            height: 36px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $main-color;
+            border-radius: 6px;
+            border: 1px solid $accent-color;
+        }
+    }
+
+    &.expanded .task-buttons {
+        opacity: 1;
+        max-height: 50px;
+        margin-top: 8px;
+    }
+}
+
+.no-tasks-warning {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding-bottom: 32px;
+
+    span {
+        color: $light-color;
+        font-size: 24px;
+    }
+
+    .warning-separator {
+        width: 64px;
+        height: 3px;
+        background-color: $accent-active-color;
     }
 }
