@@ -7,8 +7,17 @@ const app = express()
 const port = 5001;
 
 const cors = require('cors');
+const { db } = require('./src/core/db/db');
+const { TaskModel } = require('./src/core/db/TaskModel');
 app.use(cors());
 app.use(express.json());
+
+(async () => {
+    const tables = await db.getQueryInterface().showAllTables();
+    if (!tables.includes("tasks")) {
+        await TaskModel.sync();
+    }
+})();
 
 app.get('/getTasks', async (req, res) => {
     res.send(200, await taskManager.getTasksList());
