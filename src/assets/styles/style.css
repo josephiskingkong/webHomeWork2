@@ -34,10 +34,13 @@ body {
   font-size: 14px;
   padding: 7px 14px;
   background-color: #242320;
-  border: 1px solid #ff8303;
+  border: 1px solid #a35709;
   border-radius: 4px;
   outline: none;
   color: #f0e3ca;
+}
+.add-menu .menu-inputs *:focus {
+  border: 1px solid #ff8303;
 }
 .add-menu .menu-inputs #description-input {
   overflow: hidden;
@@ -93,6 +96,17 @@ body {
 .task .task-wrapper .task-texts .task-title {
   font-size: 22px;
   font-weight: 500;
+}
+.task .task-wrapper .task-texts .task-description {
+  font-size: 14px;
+  max-height: 33px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  line-height: 16px;
+  height: 33px;
 }
 .task .task-wrapper .delete-task-button {
   width: 32px;
@@ -311,6 +325,7 @@ body {
 }
 .edit-screen #edit-wrapper .edit-menu .edit-inputs .edit-input:focus {
   outline: none;
+  border: 1px solid #ff8303;
 }
 .edit-screen #edit-wrapper .edit-menu .edit-inputs #edit-description {
   color: #f0e3ca;
@@ -326,6 +341,85 @@ body {
   gap: 10px;
 }
 .edit-screen #edit-wrapper .edit-menu .edit-buttons .edit-button {
+  width: 64px;
+  height: 24px;
+  background-color: #242320;
+  border: 1px solid #a35709;
+  color: #f0e3ca;
+  border-radius: 4px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.info-screen {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8392156863);
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0.22, 0.6, 0.66, 0.95);
+  flex-direction: row;
+  justify-content: center;
+}
+.info-screen #info-wrapper {
+  width: 90%;
+  height: 50%;
+  background-color: #242320;
+  position: absolute;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  bottom: 0;
+  display: flex;
+}
+.info-screen #info-wrapper .info-menu {
+  padding: 18px;
+  color: #f0e3ca;
+  font-size: 18px;
+  gap: 8px;
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.info-screen #info-wrapper .info-menu .info-header {
+  width: 100%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 24px;
+}
+.info-screen #info-wrapper .info-menu .info-texts {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  outline: none;
+  font-size: 22px;
+}
+.info-screen #info-wrapper .info-menu .info-texts .info-title {
+  color: #f0e3ca;
+  background: #23221f;
+  border-radius: 4px;
+  padding: 0px 9px;
+  font-weight: 600;
+}
+.info-screen #info-wrapper .info-menu .info-texts #info-description {
+  font-size: 16px;
+  color: #f0e3ca;
+  height: 100%;
+  padding: 7px 9px;
+}
+.info-screen #info-wrapper .info-menu .edit-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.info-screen #info-wrapper .info-menu .edit-buttons .edit-button {
   width: 64px;
   height: 24px;
   background-color: #242320;

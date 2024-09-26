@@ -1,6 +1,7 @@
 import { fetchTasks } from "../api/api.js";
 import { closeDeleteScreen, deleteScreen } from "./deleteTask.js";
 import { closeEditScreen, editScreen, insertTaskIntoEditScreen } from "./editScreen.js";
+import { closeInfoScreen, infoScreen, insertTaskIntoInfoScreen } from "./infoScreen.js";
 import { closeShareScreen, shareScreen } from "./shareScreen.js";
 
 export let currentTask = null;
@@ -62,6 +63,19 @@ function addTaskToDOM(task) {
         };
         insertTaskIntoEditScreen(currentTask.title, currentTask.description)
         document.addEventListener('click', closeEditScreen, { once: true });
+    });
+
+    const infoButton = taskElement.querySelector('#info');
+    infoButton.addEventListener('click', (event) => {
+        event.stopPropagation();
+        infoScreen.classList.add('active-screen');
+        currentTask = {
+            id: task.id,
+            title: task.title,
+            description: task.description
+        };
+        insertTaskIntoInfoScreen(currentTask.title, currentTask.description)
+        document.addEventListener('click', closeInfoScreen, { once: true });
     });
 
     tasksContainer.appendChild(taskElement);
