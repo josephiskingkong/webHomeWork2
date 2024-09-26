@@ -40,3 +40,57 @@ export async function addTaskToDB(title, description) {
         return null;
     }
 }
+
+export async function deleteTask(id) {
+    try {
+        const body = {
+            id: id
+        };
+
+        let response = await fetch(`${ENDPOINT}/delete`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        });
+
+        if (!response.ok) {
+            throw new Error('Error while adding task');
+        }
+
+        return;
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error');
+        return null;
+    }
+}
+
+export async function updateTask(id, title, description) {
+    try {
+        const body = {
+            id: id,
+            title: title,
+            description: description
+        };
+
+        let response = await fetch(`${ENDPOINT}/update`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(body)
+        });
+
+        if (!response.ok) {
+            throw new Error('Error while adding task');
+        }
+
+        return;
+    } catch (error) {
+        console.error('Error:', error);
+        alert('Error');
+        return null;
+    }
+}

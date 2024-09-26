@@ -57,12 +57,41 @@
             </div>
         </div>
     </div>
+
+    <div class="delete-screen">
+        <div id="delete-wrapper">
+            <div class="delete-header-line"></div>
+            <div class="delete-menu">
+                <span>Delete this task?</span>
+                <div class="delete-buttons">
+                    <button id="delete-confirm" class="delete-button">Yes</button>
+                    <button id="delete-cancel" class="delete-button primary-button">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="edit-screen">
+        <div id="edit-wrapper">
+            <div class="edit-menu">
+                <div class="edit-inputs">
+                    <input type="text" id="edit-title" class="edit-input">
+                    <textarea name="" id="edit-description" class="edit-input"></textarea>
+                </div>
+                <div class="edit-buttons">
+                    <button id="edit-confirm" class="edit-button">Save</button>
+                    <button id="edit-cancel" class="edit-button">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 
 <script type="module" src="../src/scripts/api/api.js"></script>
 <script type="module" src="../src/scripts/interface/manageButtons.js"></script>
 <script type="module" src="../src/scripts/interface/loadTasks.js"></script>
 <script type="module" src="../src/scripts/interface/addTask.js"></script>
+<script type="module" src="../src/scripts/interface/deleteTask.js"></script>
 <script type="module" src="../src/scripts/interface/shareScreen.js"></script>
 
 </html>

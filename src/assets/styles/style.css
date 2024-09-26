@@ -5,7 +5,7 @@
 }
 
 body {
-  background: #1B1A17;
+  background: #1b1a17;
 }
 
 .hidden {
@@ -34,10 +34,10 @@ body {
   font-size: 14px;
   padding: 7px 14px;
   background-color: #242320;
-  border: 1px solid #FF8303;
+  border: 1px solid #ff8303;
   border-radius: 4px;
   outline: none;
-  color: #F0E3CA;
+  color: #f0e3ca;
 }
 .add-menu .menu-inputs #description-input {
   overflow: hidden;
@@ -53,7 +53,7 @@ body {
   height: 70px;
   background-color: transparent;
   border-radius: 8px;
-  border: 2px solid #FF8303;
+  border: 2px solid #ff8303;
   cursor: pointer;
 }
 
@@ -77,17 +77,18 @@ body {
   flex-direction: row;
   justify-content: space-between;
   padding: 16px;
-  border: 2px solid #A35709;
+  border: 2px solid #a35709;
   border-radius: 8px;
   align-items: center;
   z-index: 15;
   cursor: pointer;
-  color: #F0E3CA;
+  color: #f0e3ca;
 }
 .task .task-wrapper .task-texts {
   display: flex;
   flex-direction: column;
-  color: #F0E3CA;
+  color: #f0e3ca;
+  max-width: 300px;
 }
 .task .task-wrapper .task-texts .task-title {
   font-size: 22px;
@@ -96,9 +97,9 @@ body {
 .task .task-wrapper .delete-task-button {
   width: 32px;
   height: 32px;
-  border: 2px solid #A35709;
+  border: 2px solid #a35709;
   border-radius: 5px;
-  background-color: #1B1A17;
+  background-color: #1b1a17;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,7 +123,7 @@ body {
 }
 .task .task-buttons .task-button {
   cursor: pointer;
-  color: #F0E3CA;
+  color: #f0e3ca;
   font-size: 16px;
   font-weight: 700;
   width: 36px;
@@ -132,7 +133,7 @@ body {
   align-items: center;
   background-color: #242320;
   border-radius: 6px;
-  border: 1px solid #A35709;
+  border: 1px solid #a35709;
 }
 .task.expanded .task-buttons {
   opacity: 1;
@@ -151,13 +152,13 @@ body {
   padding-bottom: 32px;
 }
 .no-tasks-warning span {
-  color: #F0E3CA;
+  color: #f0e3ca;
   font-size: 24px;
 }
 .no-tasks-warning .warning-separator {
   width: 64px;
   height: 3px;
-  background-color: #FF8303;
+  background-color: #ff8303;
 }
 
 .share-screen {
@@ -179,7 +180,7 @@ body {
 .share-screen #share-menu {
   height: 76px;
   width: 90%;
-  background: #1B1A17;
+  background: #1b1a17;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
 }
@@ -197,7 +198,142 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #23221F;
+  background: #23221f;
+  cursor: pointer;
+}
+
+.delete-screen {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8392156863);
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0.22, 0.6, 0.66, 0.95);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.delete-screen #delete-wrapper {
+  width: 280px;
+  height: 140px;
+  background-color: #242320;
+}
+.delete-screen #delete-wrapper .delete-header-line {
+  height: 4px;
+  width: 100%;
+  background: #a35709;
+}
+.delete-screen #delete-wrapper .delete-menu {
+  color: #f0e3ca;
+  font-size: 18px;
+  gap: 30px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.delete-screen #delete-wrapper .delete-menu .delete-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.delete-screen #delete-wrapper .delete-menu .delete-buttons .delete-button {
+  width: 64px;
+  height: 24px;
+  background-color: #242320;
+  border: 1px solid #a35709;
+  color: #f0e3ca;
+  border-radius: 4px;
+  font-size: 10px;
+  cursor: pointer;
+}
+.delete-screen #delete-wrapper .delete-menu .delete-buttons .primary-button {
+  border: 1px solid #ff8303;
+}
+
+.edit-screen {
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8392156863);
+  display: flex;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s cubic-bezier(0.22, 0.6, 0.66, 0.95);
+  flex-direction: row;
+  justify-content: center;
+}
+.edit-screen #edit-wrapper {
+  width: 90%;
+  height: 50%;
+  background-color: #242320;
+  position: absolute;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  bottom: 0;
+  display: flex;
+}
+.edit-screen #edit-wrapper .edit-menu {
+  padding: 18px;
+  color: #f0e3ca;
+  font-size: 18px;
+  gap: 8px;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+}
+.edit-screen #edit-wrapper .edit-menu .edit-inputs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+  outline: none;
+  font-size: 14px;
+}
+.edit-screen #edit-wrapper .edit-menu .edit-inputs .edit-input {
+  color: #f0e3ca;
+  border: 1px solid #a35709;
+  background: #23221f;
+  border-radius: 4px;
+  height: 32px;
+  padding: 0px 9px;
+}
+.edit-screen #edit-wrapper .edit-menu .edit-inputs .edit-input:focus {
+  outline: none;
+}
+.edit-screen #edit-wrapper .edit-menu .edit-inputs #edit-description {
+  color: #f0e3ca;
+  height: 100%;
+  padding: 7px 9px;
+}
+.edit-screen #edit-wrapper .edit-menu .edit-inputs #edit-description:focus {
+  outline: none;
+}
+.edit-screen #edit-wrapper .edit-menu .edit-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.edit-screen #edit-wrapper .edit-menu .edit-buttons .edit-button {
+  width: 64px;
+  height: 24px;
+  background-color: #242320;
+  border: 1px solid #a35709;
+  color: #f0e3ca;
+  border-radius: 4px;
+  font-size: 10px;
+  cursor: pointer;
 }
 
 .active-screen {

@@ -20,6 +20,18 @@ app.post('/create', async (req, res) => {
     return res.send(200, result);
 })
 
+app.post('/delete', async (req, res) => {
+    const { id } = req.body;
+    await taskManager.destroy(id);
+    return res.send(200, "OK");
+})
+
+app.post('/update', async (req, res) => {
+    const { id, title, description } = req.body;
+    await taskManager.updateTask(id, title, description);
+    return res.send(200, "OK");
+})
+
 app.listen(port, () => {
     console.log(`Started on port ${port}`)
 })

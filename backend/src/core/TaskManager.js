@@ -19,14 +19,14 @@ class TaskManager {
     async destroy(id) {
         const task = await TaskModel.findOne({ where: { id: id } });
         if (!task) {
-            return {};
+            return;
         }
 
-        await new Task(id = id).destroy();
+        await task.destroy();
     }
 
     async getTasksList() {
-        const tasks = await TaskModel.findAll();
+        const tasks = await TaskModel.findAll({ order: [ ['id', 'ASC'] ] });
         if (tasks.length === 0) {
             return [];
         }
@@ -34,6 +34,11 @@ class TaskManager {
         return tasks.map(task => {
             return new Task(task.title, task.description, task.id);
         })
+    }
+
+    async updateTask(id, title, description) {
+        const task = new Task(null, null, id);
+        await task.update(title, description);
     }
 }
 
