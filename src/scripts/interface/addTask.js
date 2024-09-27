@@ -13,7 +13,7 @@ addTaskButton.addEventListener('click', async () => {
 
     [titleInput.value, descriptionInput.value] = ['', '']
 
-   await addTaskToDB(title, description);
+    await addTaskToDB(title, description);
 
-   await refreshTasks();
+    await refreshTasks();
 })

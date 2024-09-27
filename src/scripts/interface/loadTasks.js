@@ -30,7 +30,7 @@ function addTaskToDOM(task) {
 
     const shareButton = taskElement.querySelector('#share');
     shareButton.addEventListener('click', (event) => {
-        event.stopPropagation(); 
+        event.stopPropagation();
         shareScreen.classList.add('active-screen');
         currentTask = {
             id: task.id,
@@ -42,7 +42,7 @@ function addTaskToDOM(task) {
 
     const deleteButton = taskElement.querySelector('#delete_task');
     deleteButton.addEventListener('click', async (event) => {
-        event.stopPropagation(); 
+        event.stopPropagation();
         deleteScreen.classList.add('active-screen');
         currentTask = {
             id: task.id,

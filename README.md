@@ -1,7 +1,3 @@
-Вот полный `README.md` файл с учетом всех рекомендаций:
-
----
-
 # 📋 TODO List on Node.js and HTML
 
 This is a small pet project that serves as a TODO List application. The backend is developed with Node.js using the Express.js library, while the frontend is built using HTML, JavaScript, and SASS.
