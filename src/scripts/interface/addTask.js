@@ -1,5 +1,5 @@
 import { addTaskToDB } from "../api/api.js";
-import { refreshTasks } from "./loadTasks.js";
+import { addTaskToDOM, refreshTasks } from "./loadTasks.js";
 
 const addTaskButton = document.getElementById('menu-button');
 
@@ -13,7 +13,7 @@ addTaskButton.addEventListener('click', async () => {
 
     [titleInput.value, descriptionInput.value] = ['', '']
 
-    await addTaskToDB(title, description);
+    const task = await addTaskToDB(title, description);
 
-    await refreshTasks();
+    addTaskToDOM(task);
 })

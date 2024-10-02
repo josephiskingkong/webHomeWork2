@@ -1,5 +1,5 @@
 import { deleteTask } from "../api/api.js";
-import { currentTask, refreshTasks } from "./loadTasks.js";
+import { currentTask, currentTaskContainer, refreshTasks } from "./loadTasks.js";
 
 const deleteMenu = document.getElementById('delete-wrapper');
 export const deleteScreen = document.querySelector('.delete-screen');
@@ -15,7 +15,7 @@ export function closeDeleteScreen(event) {
 confirmButton.addEventListener('click', async () => {
     await deleteTask(currentTask.id)
     deleteScreen.classList.remove('active-screen');
-    await refreshTasks()
+    currentTaskContainer.remove();
 })
 
 cancelButton.addEventListener('click', () => deleteScreen.classList.remove('active-screen'))

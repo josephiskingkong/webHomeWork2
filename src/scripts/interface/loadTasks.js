@@ -5,8 +5,9 @@ import { closeInfoScreen, infoScreen, insertTaskIntoInfoScreen } from "./infoScr
 import { closeShareScreen, shareScreen } from "./shareScreen.js";
 
 export let currentTask = null;
+export let currentTaskContainer = null;
 
-function addTaskToDOM(task) {
+export function addTaskToDOM(task) {
     const tasksContainer = document.querySelector('.tasks');
     const taskElement = document.createElement('div');
     taskElement.classList.add('task');
@@ -49,6 +50,7 @@ function addTaskToDOM(task) {
             title: task.title,
             description: task.description
         };
+        currentTaskContainer = taskElement;
         document.addEventListener('click', closeDeleteScreen, { once: true });
     })
 
