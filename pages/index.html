@@ -1,19 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TODO List</title>
     <link rel="stylesheet" href="../src/assets/styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
     <div class="wrapper">
         <div class="add-menu">
             <div class="menu-inputs">
-
+                <input id="title-input" placeholder="Title...">
+                <textarea id="description-input" placeholder="About..."></textarea>
             </div>
-            button.
+            <button id="menu-button">
+                <img src="../src/assets/images/cross.svg" alt="cross" id="menu-button-cross">
+            </button>
+        </div>
+
+        <div class="no-tasks-warning hidden" id="warning">
+            <div class="warning-separator"></div>
+            <span>No tasks</span>
+            <div class="warning-separator"></div>
+        </div>
+
+        <div class="tasks" id="tasksContainer">
+
+        </div>
+    </div>
+
+    <div class="share-screen">
+        <div id="share-menu">
+            <div class="share-buttons">
+                <button class="share-button" id="copy">
+                    <img src="../src/assets/images/share/copy.svg" alt="">
+                </button>
+                <button class="share-button" id="vk">
+                    <img src="../src/assets/images/share/vk.svg" alt="">
+                </button>
+                <button class="share-button" id="telegram">
+                    <img src="../src/assets/images/share/telegram.svg" alt="">
+                </button>
+                <button class="share-button" id="whatsapp">
+                    <img src="../src/assets/images/share/whatsapp.svg" alt="">
+                </button>
+                <button class="share-button" id="facebook">
+                    <img src="../src/assets/images/share/facebook.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="delete-screen">
+        <div id="delete-wrapper">
+            <div class="delete-header-line"></div>
+            <div class="delete-menu">
+                <span>Delete this task?</span>
+                <div class="delete-buttons">
+                    <button id="delete-confirm" class="delete-button">Yes</button>
+                    <button id="delete-cancel" class="delete-button primary-button">No</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="edit-screen">
+        <div id="edit-wrapper">
+            <div class="edit-menu">
+                <div class="edit-inputs">
+                    <input type="text" id="edit-title" class="edit-input">
+                    <textarea name="" id="edit-description" class="edit-input"></textarea>
+                </div>
+                <div class="edit-buttons">
+                    <button id="edit-confirm" class="edit-button">Save</button>
+                    <button id="edit-cancel" class="edit-button">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="info-screen">
+        <div id="info-wrapper">
+            <div class="info-menu">
+                <p class="info-header">Task info</p>
+                <div class="info-texts">
+                    <p type="text" id="info-title" class="info-title">Test</p>
+                    <p name="" id="info-description" class="info-description">Test</p>
+                </div>
+            </div>
         </div>
     </div>
 </body>
+
+<script type="module" src="../src/scripts/api/api.js"></script>
+<script type="module" src="../src/scripts/interface/manageButtons.js"></script>
+<script type="module" src="../src/scripts/interface/loadTasks.js"></script>
+<script type="module" src="../src/scripts/interface/addTask.js"></script>
+<script type="module" src="../src/scripts/interface/deleteTask.js"></script>
+<script type="module" src="../src/scripts/interface/shareScreen.js"></script>
+
 </html>
