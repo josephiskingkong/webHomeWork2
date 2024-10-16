@@ -1,5 +1,5 @@
 import { updateTask } from "../api/api.js";
-import { currentTask, refreshTasks } from "./loadTasks.js";
+import { currentTask, currentTaskContainer, refreshTasks } from "./loadTasks.js";
 
 export const editScreen = document.querySelector('.edit-screen');
 const editMenu = document.querySelector('.edit-menu');
@@ -26,7 +26,8 @@ export async function saveTask() {
     }
 
     await updateTask(currentTask.id, title, description);
-    await refreshTasks();
+    currentTaskContainer.querySelector('.task-title').textContent = title;
+    currentTaskContainer.querySelector('.task-description').textContent = description;
 
     editScreen.classList.remove('active-screen');
 }

@@ -66,6 +66,7 @@ export function addTaskToDOM(task) {
             title: task.title,
             description: task.description
         };
+        currentTaskContainer = taskElement;
         insertTaskIntoEditScreen(currentTask.title, currentTask.description)
         document.addEventListener('click', closeEditScreen, { once: false });
     });
