@@ -41,7 +41,7 @@ export function addTaskToDOM(task) {
             title: task.title,
             description: task.description
         };
-        document.addEventListener('click', closeShareScreen, { once: true });
+        document.addEventListener('click', closeShareScreen, { once: false });
     });
 
     const deleteButton = taskElement.querySelector('#delete_task');
@@ -54,7 +54,7 @@ export function addTaskToDOM(task) {
             description: task.description
         };
         currentTaskContainer = taskElement;
-        document.addEventListener('click', closeDeleteScreen, { once: true });
+        document.addEventListener('click', closeDeleteScreen, { once: false });
     })
 
     const editButton = taskElement.querySelector('#edit');
@@ -67,7 +67,7 @@ export function addTaskToDOM(task) {
             description: task.description
         };
         insertTaskIntoEditScreen(currentTask.title, currentTask.description)
-        document.addEventListener('click', closeEditScreen, { once: true });
+        document.addEventListener('click', closeEditScreen, { once: false });
     });
 
     const infoButton = taskElement.querySelector('#info');
@@ -80,7 +80,7 @@ export function addTaskToDOM(task) {
             description: task.description
         };
         insertTaskIntoInfoScreen(currentTask.title, currentTask.description)
-        document.addEventListener('click', closeInfoScreen, { once: true });
+        document.addEventListener('click', closeInfoScreen, { once: false });
     });
 
     tasksContainer.appendChild(taskElement);
