@@ -15,8 +15,8 @@ export function addTaskToDOM(task) {
     taskElement.innerHTML = `
         <div class="task-wrapper">
             <div class="task-texts">
-                <span class="task-title">${task.title}</span>
-                <span class="task-description">${task.description}</span>
+                <span class="task-title"></span>
+                <span class="task-description"></span>
             </div>
             <button class="delete-task-button" id="delete_task">
                 <img src="../src/assets/images/cross.svg" alt="Delete">
@@ -28,6 +28,9 @@ export function addTaskToDOM(task) {
             ${createTaskButton('info', '', 'i')}
         </div>
     `;
+
+    taskElement.querySelector('.task-title').textContent = task.title;
+    taskElement.querySelector('.task-description').textContent = task.description;
 
     const shareButton = taskElement.querySelector('#share');
     shareButton.addEventListener('click', (event) => {
